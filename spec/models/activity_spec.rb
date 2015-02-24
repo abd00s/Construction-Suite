@@ -40,4 +40,12 @@ describe Activity do
       expect(activity.shifts_to_completion.class).to eq(Float)
     end
   end  
+
+  describe "#crews_per_day" do
+    let!(:project) { Project.create(name: "Pilot") }
+    let!(:activity) {project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5, evening_crews: 1)}
+    it "Adds morning_crews and evening_crews" do
+      expect(activity.crews_per_day).to eq(2)
+    end
+  end    
 end
