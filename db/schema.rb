@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224180030) do
+ActiveRecord::Schema.define(version: 20150224183541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20150224180030) do
     t.float    "amount"
     t.float    "rate"
     t.integer  "crew_size"
-    t.integer  "morning_crews"
-    t.integer  "evening_crews"
+    t.integer  "morning_crews", default: 1
+    t.integer  "evening_crews", default: 0
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
