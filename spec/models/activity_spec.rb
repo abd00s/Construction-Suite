@@ -14,4 +14,12 @@ describe Activity do
     expect(activity).to be_valid
     expect(activity.project).to eq(project)
   end  
+
+  describe "#total_man_hours" do
+    let!(:project) { Project.create(name: "Pilot") }
+    let!(:activity) {project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5)}
+    it "Returns rate multiplied by amount" do
+      expect(activity.total_man_hours).to eq(10*1000.0)
+    end
+  end
 end
