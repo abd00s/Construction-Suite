@@ -31,4 +31,13 @@ describe Activity do
       expect(activity.crew_productivity.class).to eq(Float)
     end
   end
+
+  describe "#shifts_to_completion" do
+    let!(:project) { Project.create(name: "Pilot") }
+    let!(:activity) {project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5)}
+    it "Returns number of shifts it will require one crew to carryout work" do
+      expect(activity.shifts_to_completion).to eq(activity.total_man_hours/activity.crew_productivity)
+      expect(activity.shifts_to_completion.class).to eq(Float)
+    end
+  end  
 end
