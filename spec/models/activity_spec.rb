@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe Activity, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Activity do
+  let!(:activity) { Activity.create }
+  it  "Must have all attributes" do 
+    expect(activity).to_not be_valid
+  end
 end
