@@ -56,5 +56,26 @@ describe Activity do
       expect(activity.total_days).to eq(activity.shifts_to_completion/activity.crews_per_day)
       expect(activity.total_days.class).to eq(Float)
     end
+  end  
+
+  describe "#actual_weeks" do
+    let!(:project) { Project.create(name: "Pilot") }
+    let!(:activity) {project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5)}
+    it "Calculates total number of actual weeks to completion rounded up" do
+      expect(activity.actual_weeks).to eq((activity.total_days/project.week_length).ceil)
+      expect(activity.actual_weeks.class).to eq(Fixnum)
+    end
+
+    it "[EXAMPLES] Calculates total number of actual weeks to completion" do
+      expect(activity.actual_weeks).to eq(40)
+      activity = project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5, evening_crews: 1)
+      expect(activity.actual_weeks).to eq(20)
+      activity = project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5, morning_crews: 2, evening_crews: 1)
+      expect(activity.actual_weeks).to eq(14)
+      activity = project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5, morning_crews: 2, evening_crews: 2)
+      expect(activity.actual_weeks).to eq(10)
+      activity = project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5, morning_crews: 3, evening_crews: 2)
+      expect(activity.actual_weeks).to eq(8)            
+    end
   end      
 end
