@@ -1,4 +1,4 @@
 class Dependency < ActiveRecord::Base
   belongs_to :activity
-  belongs_to :dependent, :class_name => 'Activity'
+  belongs_to :predecessor, :class_name => 'Activity'
 end

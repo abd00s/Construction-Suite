@@ -5,8 +5,8 @@ class Activity < ActiveRecord::Base
   validates_associated :project
 
   has_many :dependencies
-  has_many :dependents, :through => :dependencies
+  has_many :predecessors, :through => :dependencies
 
-  has_many :inverse_dependencies, :class_name => "Dependency", :foreign_key => "dependent_id"
-  has_many :inverse_dependents, :through => :inverse_dependencies, :source => :activity  
+  has_many :inverse_dependencies, :class_name => "Dependency", :foreign_key => "predecessor_id"
+  has_many :successors, :through => :inverse_dependencies, :source => :activity  
 end
