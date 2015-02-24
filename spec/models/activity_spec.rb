@@ -47,5 +47,14 @@ describe Activity do
     it "Adds morning_crews and evening_crews" do
       expect(activity.crews_per_day).to eq(2)
     end
-  end    
+  end
+
+  describe "#total_days" do
+    let!(:project) { Project.create(name: "Pilot") }
+    let!(:activity) {project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5)}
+    it "Calculates total number of working days to completion" do
+      expect(activity.total_days).to eq(activity.shifts_to_completion/activity.crews_per_day)
+      expect(activity.total_days.class).to eq(Float)
+    end
+  end      
 end
