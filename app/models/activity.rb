@@ -3,4 +3,10 @@ class Activity < ActiveRecord::Base
   belongs_to :project
   validates :name, :amount, :rate, :crew_size, :morning_crews, :evening_crews, :project_id, presence: true
   validates_associated :project
+
+  has_many :dependencies
+  has_many :dependents, :through => :dependencies
+
+  has_many :inverse_dependencies, :class_name => "Dependency", :foreign_key => "dependent_id"
+  has_many :inverse_dependents, :through => :inverse_dependencies, :source => :activity  
 end
