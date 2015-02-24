@@ -20,6 +20,6 @@ module ManhourEstimator
   end
 
   def actual_weeks
-    total_days / project.week_length
+    (total_days / project.week_length).ceil
   end
 end
