@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224183541) do
+ActiveRecord::Schema.define(version: 20150224183921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 20150224183541) do
 
   create_table "projects", force: true do |t|
     t.string   "name"
-    t.integer  "shift_length"
-    t.integer  "week_length"
+    t.float    "shift_length", default: 10.0
+    t.integer  "week_length",  default: 5
     t.datetime "created_at"
     t.datetime "updated_at"
   end
