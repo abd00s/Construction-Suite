@@ -22,4 +22,13 @@ describe Activity do
       expect(activity.total_man_hours).to eq(10*1000.0)
     end
   end
+
+  describe "#crew_productivity" do
+    let!(:project) { Project.create(name: "Pilot") }
+    let!(:activity) {project.activities.build(name: "Test", rate: 10, amount: 1000, crew_size: 5)}
+    it "Returns crew size multiplied by hours in shift" do
+      expect(activity.crew_productivity).to eq(5*10)
+      expect(activity.crew_productivity.class).to eq(Float)
+    end
+  end
 end
