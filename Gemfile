@@ -44,4 +44,5 @@ group :development, :test do
   gem 'awesome_print'
   gem 'rspec-rails', '~> 3.0'
   gem 'quiet_assets'
+  gem 'pry-byebug'
 end
