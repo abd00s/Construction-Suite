@@ -1,4 +1,4 @@
-module Pathset 
+module VertexSet 
   def initialize_vertices
     @vertices = {}
     @prevertex_activities = activities.all.to_a

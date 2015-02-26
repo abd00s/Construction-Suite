@@ -1,4 +1,4 @@
 class Project < ActiveRecord::Base
-  include Pathset
+  include VertexSet
   has_many :activities
 end
