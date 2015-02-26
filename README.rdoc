@@ -18,23 +18,23 @@ Estimates the number of work weeks required to complete an activity when provide
 * Number of shifts (Morning and/or evening)
 
 === Scheduler
-Automates the scheduling of activities with known dependencies. An activity dependent on another cannot commence until activities it is dependent upon are complete. Considerations iclude what tasks must be complete before the current task begins, what tasks should be completed at the same time, and what tasks should begin after current task is complete.
+Automates the scheduling of activities with known dependencies. An activity dependent on another cannot commence until activities it is dependent upon are complete. Considerations include what tasks must be complete before the current task begins, what tasks should be completed at the same time, and what tasks should begin after current task is complete.
 
 === Critical Path Analyzer
-After activities are scheduled, the critical path represents the longest route (duration) from beginning to end. Delays of activities falling on the critical path cause a delay on the overall project completion.  
+After activities are scheduled, the tool will identify the critical path. The critical path represents the longest route (duration) from beginning to end. Delays of activities falling on the critical path cause a delay on the overall project completion.  
 
 === Earned Value Method Progress Tracking
 A tool to allow monitoring of budget and schedule efficiency at individual progress periods and for the overall project cumulatively. At the beginning of a project, a baseline schedule is set. 
 
-* Each progress period is allocated mahours required to complete the tasks in that period (_Budgeted Cost of Work Scheduled_ or _Planned Value_)
+* Each progress period is allocated mahours required to complete the tasks in that period (_Budgeted_ _Cost_ _of_ _Work_ _Scheduled_ or _Planned_ _Value_)
 
 At the end of each period, the following are updated:
 
-*(Budgeted Cost of Work Performed_ or _Earned Value_)
+* (_Budgeted_ _Cost_ _of_ _Work_ _Performed_ or _Earned_ _Value_)
 
-*(Actual Cost of Work Performed or _Actual Cost_)
+* (_Actual_ _Cost_ of _Work_ _Performed_ or _Actual_ _Cost_)
 
-With these three figures, metrics for project performance can be deduced, namely _Cost Performance Index_ and _Schedule Performance Index_
+With these three figures, metrics for project performance can be deduced, namely _Cost_ _Performance_ _Index_ and _Schedule_ _Performance_ _Index_
 
 ==== Further considerations may include:
 
