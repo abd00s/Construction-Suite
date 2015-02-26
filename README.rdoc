@@ -1,28 +1,43 @@
-== README
+== Construction Suite
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project I'm aiming to build several applets inspired by construction industry processes, however, applicable to any industry concerned with scheduling, budgeting and resource allocation.
 
-Things you may want to cover:
+On the agenda:
 
-* Ruby version
+=== Man-hour Estimator
+Estimates the number of work weeks required to complete an activity when provided the following input:
 
-* System dependencies
+* The amount to be carried out (e.g Cubic yards of excavated dirt, tons of steel to be erected, etc. )
 
-* Configuration
+* The productivity rate (e.g. cubic yards per hour, man-hour per ton, etc.)
 
-* Database creation
+* Crew size 
 
-* Database initialization
+* Number of crews per shift
 
-* How to run the test suite
+* Number of shifts (Morning and/or evening)
 
-* Services (job queues, cache servers, search engines, etc.)
+=== Scheduler
+Automates the scheduling of activities with known dependencies. An activity dependent on another cannot commence until activities it is dependent upon are complete. Considerations iclude what tasks must be complete before the current task begins, what tasks should be completed at the same time, and what tasks should begin after current task is complete.
 
-* Deployment instructions
+=== Critical Path Analyzer
+After activities are scheduled, the critical path represents the longest route (duration) from beginning to end. Delays of activities falling on the critical path cause a delay on the overall project completion.  
 
-* ...
+=== Earned Value Method Progress Tracking
+A tool to allow monitoring of budget and schedule efficiency at individual progress periods and for the overall project cumulatively. At the beginning of a project, a baseline schedule is set. 
 
+* Each progress period is allocated mahours required to complete the tasks in that period (_Budgeted Cost of Work Scheduled_ or _Planned Value_)
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+At the end of each period, the following are updated:
+
+*(Budgeted Cost of Work Performed_ or _Earned Value_)
+
+*(Actual Cost of Work Performed or _Actual Cost_)
+
+With these three figures, metrics for project performance can be deduced, namely _Cost Performance Index_ and _Schedule Performance Index_
+
+==== Further considerations may include:
+
+* Ability to track number of crews on-site per given shift to reduce jobsite clutter.
+
+* Ability to list activities by crew.
