@@ -9,15 +9,15 @@ Project.destroy_all
 Activity.destroy_all
 Dependency.destroy_all
 p = Project.create(name: "Pilot")
-a = p.activities.create(name:"Earthwork", amount: 100, rate: 10, crew_size: 5)
-b = p.activities.create(name:"Excavation", amount: 100, rate: 10, crew_size: 5)
-c = p.activities.create(name:"Formwork", amount: 100, rate: 10, crew_size: 5)
-d = p.activities.create(name:"Foundations", amount: 100, rate: 10, crew_size: 5)
-e = p.activities.create(name:"Electric", amount: 100, rate: 10, crew_size: 5)
-f = p.activities.create(name:"Piping", amount: 100, rate: 10, crew_size: 5)
-g = p.activities.create(name:"Mechanical", amount: 100, rate: 10, crew_size: 5)
-h = p.activities.create(name:"HVAC", amount: 100, rate: 10, crew_size: 5)
-i = p.activities.create(name:"Utilities", amount: 100, rate: 10, crew_size: 5)
+a = p.activities.create(name:"Earthwork", amount: 100, rate: 10, crew_size: 5, duration: 5)
+b = p.activities.create(name:"Excavation", amount: 100, rate: 10, crew_size: 5, duration: 4)
+c = p.activities.create(name:"Formwork", amount: 100, rate: 10, crew_size: 5, duration: 6)
+d = p.activities.create(name:"Foundations", amount: 100, rate: 10, crew_size: 5, duration: 4)
+e = p.activities.create(name:"Electric", amount: 100, rate: 10, crew_size: 5, duration: 7)
+f = p.activities.create(name:"Piping", amount: 100, rate: 10, crew_size: 5, duration: 9)
+g = p.activities.create(name:"Mechanical", amount: 100, rate: 10, crew_size: 5, duration: 4)
+h = p.activities.create(name:"HVAC", amount: 100, rate: 10, crew_size: 6)
+i = p.activities.create(name:"Utilities", amount: 100, rate: 10, crew_size: 5, duration: 8)
 Dependency.create([{ activity_id: b.id, predecessor_id: a.id}, 
                   { activity_id: c.id, predecessor_id: a.id }, 
                   { activity_id: c.id, predecessor_id: b.id },
