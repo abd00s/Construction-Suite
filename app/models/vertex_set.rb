@@ -17,6 +17,7 @@ module VertexSet
       remove_independents(@vertices[key])
     else
       @vertices
+      test_method(@vertices)
     end
   end
 
