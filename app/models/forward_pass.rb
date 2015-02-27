@@ -21,5 +21,6 @@ module ForwardPass
         }
       end
     }
+    start(vertices)
   end
 end
