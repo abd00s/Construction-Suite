@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226221243) do
+ActiveRecord::Schema.define(version: 20150227222039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150226221243) do
     t.float    "late_finish"
     t.float    "free_float"
     t.float    "total_float"
+    t.boolean  "is_critical"
   end
 
   create_table "dependencies", force: true do |t|
