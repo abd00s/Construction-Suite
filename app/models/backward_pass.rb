@@ -2,6 +2,7 @@ module BackwardPass
   def start(activities)
     reversed_activites = activities.to_a.reverse.to_h
     set_lates(reversed_activites)
+    set_floats(activities)
   end
 
   def set_lates(activities)
