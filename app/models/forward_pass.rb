@@ -12,7 +12,12 @@ module ForwardPass
     vertices.each_with_index{|(vertex,activities), index|
       unless index == 0
         vertices[vertex].each{|activity|
-          puts activity.name
+          activity.early_start = activity.predecessors.maximum(:early_finish)
+          activity.save
+          activity.early_finish = activity.early_start + activity.duration
+          activity.save
+          # look at activity predecessors
+          # set activity.early_start = EF of latest predecessor 
         }
       end
     }
