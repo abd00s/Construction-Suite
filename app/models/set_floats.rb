@@ -15,5 +15,6 @@ module SetFloats
 
   def check_criticality(activity)
     activity.is_critical = (activity.total_float == 0) ? true : false
+    activity.save
   end
 end
