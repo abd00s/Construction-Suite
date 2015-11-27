@@ -8,7 +8,7 @@ module SetFloats
     end
   end
 
-  def set_total_float(activity) 
+  def set_total_float(activity)
     activity.total_float = activity.late_start - activity.early_start
     activity.save
   end
