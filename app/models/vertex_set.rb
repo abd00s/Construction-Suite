@@ -1,7 +1,7 @@
 module VertexSet
-  def auto_schedule 
+  def auto_schedule
     initialize_vertices
-  end 
+  end
   def initialize_vertices
     @vertices = {}
     @prevertex_activities = activities.all.to_a
@@ -13,8 +13,8 @@ module VertexSet
     if !activities.empty?
       key = @vertices.count + 1
       activities.each{|activity|
-        if (activity.predecessors & activities).empty?
-          @vertices[key] ||= []
+        if (activity.predecessors & activities).empty? #Revisit#
+          @vertices[key] ||= []                        #Hash default value on line 6#
           @vertices[key] << activity
         end
       }
