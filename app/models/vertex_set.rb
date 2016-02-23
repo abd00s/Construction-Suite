@@ -13,8 +13,8 @@ module VertexSet
     if !activities.empty?
       key = @vertices.count + 1
       activities.each{|activity|
-        if (activity.predecessors & activities).empty? #Revisit#
-          @vertices[key] ||= []                        #Hash default value on line 6#
+        if (activity.predecessors & activities).empty? #If activity doesn't have predecessors
+          @vertices[key] ||= []                        #in remaining tasks
           @vertices[key] << activity
         end
       }

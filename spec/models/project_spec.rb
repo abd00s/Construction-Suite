@@ -37,7 +37,7 @@ describe Project do
       expect(activity_a.late_start).to eq(2)
       expect(activity_a.late_finish).to eq(3)
       expect(activity_a.total_float).to eq(2)
-      expect(activity_a.is_critical).to be_falsey
+      expect(activity_a.is_critical).to be_falsey  ##correct way be false
 
       activity_b.reload
       expect(activity_b.early_start).to eq(0)
