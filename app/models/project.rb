@@ -3,5 +3,6 @@ class Project < ActiveRecord::Base
   include ForwardPass
   include BackwardPass
   include SetFloats
+  include VertexSetTsort
   has_many :activities
 end
