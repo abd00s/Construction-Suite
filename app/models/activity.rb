@@ -8,5 +8,9 @@ class Activity < ActiveRecord::Base
   has_many :predecessors, :through => :dependencies
 
   has_many :inverse_dependencies, :class_name => "Dependency", :foreign_key => "predecessor_id"
-  has_many :successors, :through => :inverse_dependencies, :source => :activity  
+  has_many :successors, :through => :inverse_dependencies, :source => :activity
+
+  def parents
+    Dependency.where(predecessor_id: id).map{|d| d.activity}
+  end
 end
